@@ -76,3 +76,13 @@
 .status-answered { color: var(--ok); border-color: var(--ok); }
 
 @media (max-width: 760px) { .cmp { grid-template-columns: 1fr; } }
+
+/* Phones (L009): the kit's theme.css makes the left navigation static under 760px, but site.css, loaded after it, sets
+   it sticky at every width, so on a phone the navigation stays pinned and the text scrolls under it. Restored here,
+   with the folding of the side panels switched off at that width (its grid columns are for wide screens). */
+@media (max-width: 760px) {
+  .docs-nav { position: static; top: auto; max-height: none; overflow: visible; }
+  .docs-nav .docs-fold, .docs-toc .docs-fold { display: none; }
+  .docs.nav-folded, .docs.toc-folded, .docs.nav-folded.toc-folded, .docs.docs-wide.nav-folded { grid-template-columns: 1fr; }
+  .docs.nav-folded .docs-nav > :not(.docs-fold) { display: block; }
+}
