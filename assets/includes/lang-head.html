@@ -1,0 +1,12 @@
+<!-- The language of the page: English unless ?lang=es or a remembered choice says Spanish. Set on <html lang>
+     before the body is drawn, so no flash of the other language; the kit's theme.css shows only the elements whose
+     data-lang matches it. Nothing else may carry data-lang: the kit hides every element that does. -->
+<script>
+(function () {
+  var l = 'en';
+  try { l = localStorage.getItem('thermomat-lang') || 'en'; } catch (e) {}
+  var q = /[?&]lang=(en|es)\b/.exec(location.search);
+  if (q) { l = q[1]; try { localStorage.setItem('thermomat-lang', l); } catch (e) {} }
+  document.documentElement.lang = l === 'es' ? 'es' : 'en';
+})();
+</script>

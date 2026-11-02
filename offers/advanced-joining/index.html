@@ -84,6 +84,18 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 </script>
+<!-- The language of the page: English unless ?lang=es or a remembered choice says Spanish. Set on <html lang>
+     before the body is drawn, so no flash of the other language; the kit's theme.css shows only the elements whose
+     data-lang matches it. Nothing else may carry data-lang: the kit hides every element that does. -->
+<script>
+(function () {
+  var l = 'en';
+  try { l = localStorage.getItem('thermomat-lang') || 'en'; } catch (e) {}
+  var q = /[?&]lang=(en|es)\b/.exec(location.search);
+  if (q) { l = q[1]; try { localStorage.setItem('thermomat-lang', l); } catch (e) {} }
+  document.documentElement.lang = l === 'es' ? 'es' : 'en';
+})();
+</script>
 
 
 <link rel="stylesheet" href="../../assets/styles/theme.css">
@@ -96,12 +108,13 @@ document.addEventListener("DOMContentLoaded", function () {
 <div class="topline"></div>
 <header class="site-head">
   <div class="site-head__inner">
-    <a href="../../index.html" class="wordmark">thermomat <span class="accent">PhD thesis offers</span> · 2026
-      <span class="wordmark-sub">four doctoral theses at the thermomat research group, Fisika Saila, EHU</span>
+    <a href="../../index.html" class="wordmark"><span data-lang="en" lang="en">thermomat <span class="accent">PhD thesis offers</span> · 2026</span><span data-lang="es" lang="es">thermomat <span class="accent">tesis doctorales</span> · 2026</span>
+      <span class="wordmark-sub"><span data-lang="en" lang="en">four doctoral theses at the thermomat research group, Fisika Saila, EHU</span><span data-lang="es" lang="es">cuatro tesis doctorales en el grupo de investigación thermomat, Fisika Saila, EHU</span></span>
     </a>
     <nav class="site-nav">
-      <a href="../../index.html">Overview</a>
-      <a href="../../offers/index.html">Offers</a>
+      <a href="../../index.html"><span data-lang="en" lang="en">Overview</span><span data-lang="es" lang="es">Inicio</span></a>
+      <a href="../../offers/index.html"><span data-lang="en" lang="en">Offers</span><span data-lang="es" lang="es">Ofertas</span></a>
+      <span class="nav-right"><span class="lang-toggle" role="group" aria-label="Language / Idioma"><button type="button" data-set-lang="en" aria-pressed="true" title="English">EN</button><span class="sl">|</span><button type="button" data-set-lang="es" aria-pressed="false" title="Español">ES</button></span></span>
     </nav>
   </div>
 </header>
@@ -109,8 +122,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <div class="docs">
 <nav class="docs-nav" aria-label="Site sections">
 <button class="docs-fold" type="button" data-fold="nav" aria-label="Hide the navigation" title="Hide the navigation">‹</button>
-<details class="group" open=""><summary class="t">Overview</summary><ul><li><a href="../../index.html">Overview</a></li></ul></details>
-<details class="group" open=""><summary class="t">Offers</summary><ul><li><a href="../../offers/index.html">All four offers</a></li><li><a href="../../offers/what-a-powder-pattern-can-tell/index.html">What a powder pattern can tell</a></li><li><a href="../../offers/laser-textured-surfaces/index.html">Laser-textured surfaces with selective radiative properties</a></li><li><a href="../../offers/high-temperature-emissometer/index.html">An emissometer for ceramics up to 2000 °C</a></li><li><a href="../../offers/advanced-joining/index.html">Advanced joining of high-performance metallic materials</a></li></ul></details>
+<details class="group" open=""><summary class="t"><span data-lang="en" lang="en">Overview</span><span data-lang="es" lang="es">Inicio</span></summary><ul><li><a href="../../index.html"><span data-lang="en" lang="en">Overview</span><span data-lang="es" lang="es">Inicio</span></a></li></ul></details>
+<details class="group" open=""><summary class="t"><span data-lang="en" lang="en">Offers</span><span data-lang="es" lang="es">Ofertas</span></summary><ul><li><a href="../../offers/index.html"><span data-lang="en" lang="en">The four offers, 2026</span><span data-lang="es" lang="es">Las cuatro ofertas, 2026</span></a></li><li><a href="../../offers/what-a-powder-pattern-can-tell/index.html"><span data-lang="en" lang="en">What a powder pattern can tell</span><span data-lang="es" lang="es">Lo que un difractograma de polvo puede decir</span></a></li><li><a href="../../offers/laser-textured-surfaces/index.html"><span data-lang="en" lang="en">Laser-textured surfaces with selective radiative properties</span><span data-lang="es" lang="es">Superficies texturizadas por láser con propiedades radiativas selectivas</span></a></li><li><a href="../../offers/high-temperature-emissometer/index.html"><span data-lang="en" lang="en">An emissometer for ceramics up to 2000 °C</span><span data-lang="es" lang="es">Un emisómetro para cerámicos hasta 2000 °C</span></a></li><li><a href="../../offers/advanced-joining/index.html"><span data-lang="en" lang="en">Advanced joining of high-performance metallic materials</span><span data-lang="es" lang="es">Unión avanzada de materiales metálicos de altas prestaciones</span></a></li></ul></details>
 </nav>
 <div class="docs-main">
 
@@ -122,17 +135,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <!-- generated by tools/build.py from data/offers/advanced-joining.yml; do not edit -->
 <div class="page-article offer-page">
-<p class="offer-kicker">PhD thesis proposal · thermomat · Fisika Saila · EHU</p>
-<h1 class="offer-title">Advanced Joining of High-Performance Metallic Materials</h1>
-<p class="offer-sub">Transient liquid phase bonding of nickel-based superalloys to stainless steel, from processing to properties</p>
-<p class="offer-dl"><a href="../../assets/offers/advanced-joining.pdf">The offer as a PDF, one page</a></p>
+<p class="offer-kicker" data-lang="en" lang="en">PhD thesis proposal · thermomat · Fisika Saila · EHU</p><p class="offer-kicker" data-lang="es" lang="es">Propuesta de tesis doctoral · thermomat · Fisika Saila · EHU</p>
+<h1 class="offer-title" data-lang="en" lang="en">Advanced Joining of High-Performance Metallic Materials</h1><h1 class="offer-title" data-lang="es" lang="es">Unión avanzada de materiales metálicos de altas prestaciones</h1>
+<p class="offer-sub" data-lang="en" lang="en">Transient liquid phase bonding of nickel-based superalloys to stainless steel, from processing to properties</p><p class="offer-sub" data-lang="es" lang="es">Unión por fase líquida transitoria de superaleaciones de níquel con acero inoxidable, del procesado a las propiedades</p>
+<p class="offer-dl"><a href="../../assets/offers/advanced-joining.pdf"><span data-lang="en" lang="en">The offer as a PDF, one page</span><span data-lang="es" lang="es">La oferta en PDF, una página (en inglés)</span></a></p>
+<p class="translation-note" data-lang="es" lang="es">Traducción al castellano; el original, en inglés, es el PDF.</p>
 
-<h2 class="anchored">Abstract</h2><p>Are you interested in materials science, physical metallurgy, and advanced microscopy? Join our research team at the University of the Basque Country (UPV/EHU), Spain, and contribute to cutting-edge research on metallic materials for demanding industrial applications.</p><p>This PhD project focuses on the development and characterization of dissimilar joints between nickel-based superalloys, such as Inconel 718 and Haynes alloys, and stainless steel, using Transient Liquid Phase Bonding (TLPB). This joining technique offers exciting opportunities to combine the excellent high-temperature performance of superalloys with the cost-effectiveness of stainless steel, particularly for applications in energy generation, aerospace, and corrosive environments.</p><p>The research will investigate how processing conditions influence microstructure, mechanical performance, and corrosion resistance. You will gain hands-on experience with advanced characterization techniques, including scanning and transmission electron microscopy (SEM/TEM), electron backscatter diffraction (EBSD), energy-dispersive X-ray spectroscopy (EDS), and focused ion beam (FIB) microscopy, alongside mechanical and electrochemical testing.</p><p>The project is supported by an international collaboration with research groups in Austria and Argentina, offering opportunities for international research stays and interdisciplinary teamwork.</p><p>Join us to explore the fascinating relationship between processing, microstructure, and properties, and develop the experimental and analytical skills needed for a career in advanced materials research.</p>
-<figure class="offer-fig"><img src="../../assets/offers/figures/advanced-joining.png" alt="Figure 1. Multiscale characterization of the dissimilar join using scanning and transmission electron microscopy (SEM and TEM), from the micrometre to the nanometre scale. The PhD project will involve advanced microstructural characterization to investigate the relationships between processing conditions, microstructure, and the mechanical and corrosion properties of dissimilar metallic joints."><figcaption><b>Figure 1.</b> Multiscale characterization of the dissimilar join using scanning and transmission electron microscopy (SEM and TEM), from the micrometre to the nanometre scale. The PhD project will involve advanced microstructural characterization to investigate the relationships between processing conditions, microstructure, and the mechanical and corrosion properties of dissimilar metallic joints.</figcaption></figure>
-<h2 class="anchored">Requirements</h2><p class="req-lead">Nobody is expected to bring all of this. The degrees are the formal part; the rest is welcome and is taught along the way.</p><ul class="req"><li>Bachelor's degree in Physics, Chemistry or Engineering, and a Master's degree in Materials Science and Engineering or a related area, as required for admission to a doctoral programme (or expected completion before the start date).</li><li>Welcome, not required: some background in Materials Science and Engineering or Mechanical Properties of Materials; previous experience in electron microscopy and X-ray diffraction (XRD); some programming, ideally in Python, for data analysis.</li><li>Motivation to pursue experimental research, interest in international research stays (Austria and Argentina), willingness to work in a team, and English good enough to read, write and present scientific work (B2 or higher).</li></ul>
-<p class="funding" lang="es">Existe financiación total o parcial de los proyectos de tesis, las cuales dependerán del ajuste de los perfiles de los/as candidatos/as a las propuestas.</p>
-<div class="offer-people"><div><h2 class="anchored">Supervisors</h2><p>Iñaki López-Ferreño and Gabriel A. López<br><span class="aff">thermomat research group, Fisika Saila, EHU</span></p></div><div><h2 class="anchored">Contact</h2><p>Prof. Gabriel A. López<br><a href="mailto:gabrielalejandro.lopez@ehu.eus">gabrielalejandro.lopez@ehu.eus</a></p></div></div>
-<nav class="offer-prevnext"><a href="../high-temperature-emissometer/index.html">← Emissometer to 2000 °C</a><a href="../index.html">All four offers</a><span></span></nav>
+<h2 id="abstract" class="anchored"><span data-lang="en" lang="en">Abstract</span><span data-lang="es" lang="es">Resumen</span></h2><p data-lang="en" lang="en">Are you interested in materials science, physical metallurgy, and advanced microscopy? Join our research team at the University of the Basque Country (UPV/EHU), Spain, and contribute to cutting-edge research on metallic materials for demanding industrial applications.</p><p data-lang="en" lang="en">This PhD project focuses on the development and characterization of dissimilar joints between nickel-based superalloys, such as Inconel 718 and Haynes alloys, and stainless steel, using Transient Liquid Phase Bonding (TLPB). This joining technique offers exciting opportunities to combine the excellent high-temperature performance of superalloys with the cost-effectiveness of stainless steel, particularly for applications in energy generation, aerospace, and corrosive environments.</p><p data-lang="en" lang="en">The research will investigate how processing conditions influence microstructure, mechanical performance, and corrosion resistance. You will gain hands-on experience with advanced characterization techniques, including scanning and transmission electron microscopy (SEM/TEM), electron backscatter diffraction (EBSD), energy-dispersive X-ray spectroscopy (EDS), and focused ion beam (FIB) microscopy, alongside mechanical and electrochemical testing.</p><p data-lang="en" lang="en">The project is supported by an international collaboration with research groups in Austria and Argentina, offering opportunities for international research stays and interdisciplinary teamwork.</p><p data-lang="en" lang="en">Join us to explore the fascinating relationship between processing, microstructure, and properties, and develop the experimental and analytical skills needed for a career in advanced materials research.</p><p data-lang="es" lang="es">¿Te interesan la ciencia de materiales, la metalurgia física y la microscopía avanzada? Únete a nuestro equipo de investigación en la Universidad del País Vasco (UPV/EHU), España, y contribuye a una investigación puntera sobre materiales metálicos para aplicaciones industriales exigentes.</p><p data-lang="es" lang="es">Este proyecto de doctorado se centra en el desarrollo y la caracterización de uniones disimilares entre superaleaciones de base níquel, como el Inconel 718 y las aleaciones Haynes, y el acero inoxidable, mediante unión por fase líquida transitoria (TLPB). Esta técnica de unión ofrece oportunidades muy atractivas para combinar el excelente comportamiento a alta temperatura de las superaleaciones con la rentabilidad del acero inoxidable, en particular para aplicaciones en generación de energía, aeroespacial y entornos corrosivos.</p><p data-lang="es" lang="es">La investigación estudiará cómo influyen las condiciones de procesado en la microestructura, el comportamiento mecánico y la resistencia a la corrosión. Adquirirás experiencia práctica con técnicas avanzadas de caracterización, como la microscopía electrónica de barrido y de transmisión (SEM/TEM), la difracción de electrones retrodispersados (EBSD), la espectroscopía de rayos X por dispersión de energía (EDS) y la microscopía de haz de iones focalizado (FIB), junto con ensayos mecánicos y electroquímicos.</p><p data-lang="es" lang="es">El proyecto cuenta con el respaldo de una colaboración internacional con grupos de investigación de Austria y Argentina, que ofrece oportunidades de estancias de investigación internacionales y de trabajo interdisciplinar en equipo.</p><p data-lang="es" lang="es">Únete para explorar la fascinante relación entre procesado, microestructura y propiedades, y desarrolla las habilidades experimentales y analíticas necesarias para una carrera en la investigación avanzada de materiales.</p>
+<figure class="offer-fig"><img src="../../assets/offers/figures/advanced-joining.png" alt="Figure 1. Multiscale characterization of the dissimilar join using scanning and transmission electron microscopy (SEM and TEM), from the micrometre to the nanometre scale. The PhD project will involve advanced microstructural characterization to investigate the relationships between processing conditions, microstructure, and the mechanical and corrosion properties of dissimilar metallic joints."><figcaption><span data-lang="en" lang="en"><b>Figure 1.</b> Multiscale characterization of the dissimilar join using scanning and transmission electron microscopy (SEM and TEM), from the micrometre to the nanometre scale. The PhD project will involve advanced microstructural characterization to investigate the relationships between processing conditions, microstructure, and the mechanical and corrosion properties of dissimilar metallic joints.</span><span data-lang="es" lang="es"><b>Figura 1.</b> Caracterización multiescala de la unión disimilar mediante microscopía electrónica de barrido y de transmisión (SEM y TEM), de la escala del micrómetro a la del nanómetro. El proyecto de doctorado incluirá una caracterización microestructural avanzada para investigar las relaciones entre las condiciones de procesado, la microestructura y las propiedades mecánicas y frente a la corrosión de las uniones metálicas disimilares.</span></figcaption></figure>
+<h2 id="requirements" class="anchored"><span data-lang="en" lang="en">Requirements</span><span data-lang="es" lang="es">Requisitos</span></h2><p class="req-lead" data-lang="en" lang="en">Nobody is expected to bring all of this. The degrees are the formal part; the rest is welcome and is taught along the way.</p><p class="req-lead" data-lang="es" lang="es">Nadie tiene por qué aportar todo esto. Las titulaciones son la parte formal; lo demás se valora y se aprende por el camino.</p><ul class="req"><li><span data-lang="en" lang="en">Bachelor's degree in Physics, Chemistry or Engineering, and a Master's degree in Materials Science and Engineering or a related area, as required for admission to a doctoral programme (or expected completion before the start date).</span><span data-lang="es" lang="es">Grado en Física, Química o Ingeniería, y máster en Ciencia e Ingeniería de Materiales o un área afín, como se exige para el acceso a un programa de doctorado (o previsión de terminarlos antes de la fecha de inicio).</span></li><li><span data-lang="en" lang="en">Welcome, not required: some background in Materials Science and Engineering or Mechanical Properties of Materials; previous experience in electron microscopy and X-ray diffraction (XRD); some programming, ideally in Python, for data analysis.</span><span data-lang="es" lang="es">Se valorará, sin ser imprescindible: alguna formación en Ciencia e Ingeniería de Materiales o en Propiedades Mecánicas de los Materiales; experiencia previa en microscopía electrónica y difracción de rayos X (XRD); algo de programación, preferiblemente en Python, para el análisis de datos.</span></li><li><span data-lang="en" lang="en">Motivation to pursue experimental research, interest in international research stays (Austria and Argentina), willingness to work in a team, and English good enough to read, write and present scientific work (B2 or higher).</span><span data-lang="es" lang="es">Motivación para la investigación experimental, interés por las estancias de investigación internacionales (Austria y Argentina), disposición a trabajar en equipo, e inglés suficiente para leer, escribir y presentar trabajo científico (B2 o superior).</span></li></ul>
+<p class="funding"><span data-lang="en" lang="en">Full or partial funding is available for the thesis projects.</span><span data-lang="es" lang="es">Existe financiación total o parcial de los proyectos de tesis.</span></p>
+<div class="offer-people"><div><h2 id="supervisors" class="anchored"><span data-lang="en" lang="en">Supervisors</span><span data-lang="es" lang="es">Dirección</span></h2><p><span data-lang="en" lang="en">Iñaki López-Ferreño and Gabriel A. López</span><span data-lang="es" lang="es">Iñaki López-Ferreño y Gabriel A. López</span><br><span class="aff"><span data-lang="en" lang="en">thermomat research group, Fisika Saila, EHU</span><span data-lang="es" lang="es">grupo de investigación thermomat, Fisika Saila, EHU</span></span></p></div><div><h2 id="contact" class="anchored"><span data-lang="en" lang="en">Contact</span><span data-lang="es" lang="es">Contacto</span></h2><p>Prof. Gabriel A. López<br><a href="mailto:gabrielalejandro.lopez@ehu.eus">gabrielalejandro.lopez@ehu.eus</a></p></div></div>
+<nav class="offer-prevnext"><a href="../high-temperature-emissometer/index.html">← <span data-lang="en" lang="en">Emissometer to 2000 °C</span><span data-lang="es" lang="es">Emisómetro hasta 2000 °C</span></a><a href="../index.html"><span data-lang="en" lang="en">All four offers</span><span data-lang="es" lang="es">Las cuatro ofertas</span></a><span></span></nav>
 </div>
 
 
@@ -267,21 +281,64 @@ document.addEventListener("DOMContentLoaded", function () {
   <div class="site-foot__inner">
     <div class="foot-grid">
       <div class="foot-about">
-        <h4 class="anchored">What this is</h4>
-        <p>The PhD thesis offers of the thermomat research group at the EHU. Each offer is one page, to read here or to download; write to the contact about any of them.</p>
+        <h4 class="anchored"><span data-lang="en" lang="en">What this is</span><span data-lang="es" lang="es">Qué es esto</span></h4>
+        <p><span data-lang="en" lang="en">The PhD thesis offers of the thermomat research group at the EHU. Each offer is one page, to read here or to download; write to the contact about any of them.</span><span data-lang="es" lang="es">Las ofertas de tesis doctoral del grupo de investigación thermomat de la EHU. Cada oferta ocupa una página, para leerla aquí o descargarla; escribe al contacto sobre cualquiera de ellas.</span></p>
         <div class="cite-block">Prof. Gabriel A. López · Fisika Saila, EHU<br>gabrielalejandro.lopez@ehu.eus</div>
       </div>
-      <div><h4 class="anchored">This site</h4><ul><li><a href="../../index.html">Overview</a></li><li><a href="../../offers/index.html">Offers</a></li></ul></div>
-      <div><h4 class="anchored">The group</h4><ul>
+      <div><h4 class="anchored"><span data-lang="en" lang="en">This site</span><span data-lang="es" lang="es">Este sitio</span></h4><ul><li><a href="../../index.html"><span data-lang="en" lang="en">Overview</span><span data-lang="es" lang="es">Inicio</span></a></li><li><a href="../../offers/index.html"><span data-lang="en" lang="en">Offers</span><span data-lang="es" lang="es">Ofertas</span></a></li></ul></div>
+      <div><h4 class="anchored"><span data-lang="en" lang="en">The group</span><span data-lang="es" lang="es">El grupo</span></h4><ul>
         <li><a href="https://www.thermomat.eus">thermomat.eus</a></li>
         <li><a href="https://www.ehu.eus">EHU</a></li></ul></div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 thermomat research group</span>
+      <span>© 2026 <span data-lang="en" lang="en">thermomat research group</span><span data-lang="es" lang="es">grupo de investigación thermomat</span></span>
       <span>Quarto · family design kit</span>
     </div>
   </div>
 </footer>
+<!-- The language toggle: the EN | ES buttons in the header switch the page and remember the choice in this
+     browser. The kit's docs-close.html builds the breadcrumbs and "On this page" from text, which would join both
+     languages; they are rebuilt here from the marked-up headings and navigation, so each shows one language. -->
+<script>
+(function () {
+  var root = document.documentElement;
+  function set(l) {
+    root.lang = l;
+    try { localStorage.setItem('thermomat-lang', l); } catch (e) {}
+    document.querySelectorAll('[data-set-lang]').forEach(function (b) {
+      b.setAttribute('aria-pressed', b.getAttribute('data-set-lang') === l ? 'true' : 'false');
+    });
+  }
+  document.querySelectorAll('[data-set-lang]').forEach(function (b) {
+    b.addEventListener('click', function () { set(b.getAttribute('data-set-lang')); });
+  });
+  set(root.lang === 'es' ? 'es' : 'en');
+
+  /* "On this page": copy each heading's markup, both languages, instead of its joined text. */
+  document.querySelectorAll('.docs-toc ol a[href^="#"]').forEach(function (a) {
+    var h = document.getElementById(decodeURIComponent(a.getAttribute('href').slice(1)));
+    if (h && h.querySelector('[data-lang]')) {
+      var c = h.cloneNode(true);
+      c.querySelectorAll('.anchorjs-link').forEach(function (n) { n.remove(); });
+      a.innerHTML = c.innerHTML.trim();
+    }
+  });
+  var t = document.querySelector('.docs-toc .t');
+  if (t) t.innerHTML = '<span data-lang="en" lang="en">On this page</span><span data-lang="es" lang="es">En esta página</span>';
+
+  /* Breadcrumbs: group › page, from the navigation's markup. */
+  var crumbs = document.querySelector('.docs-crumbs'), cur = document.querySelector('.docs-nav a.current');
+  if (crumbs && cur && cur.querySelector('[data-lang]')) {
+    var det = cur.closest('details.group'), g = det && det.querySelector('summary.t');
+    var parts = [];
+    if (g && g.textContent.trim() !== cur.textContent.trim()) parts.push(g.innerHTML);
+    parts.push(cur.innerHTML);
+    crumbs.innerHTML = parts.map(function (p, i) {
+      return (i ? '<span class="sep">›</span>' : '') + '<span>' + p + '</span>';
+    }).join('');
+  }
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

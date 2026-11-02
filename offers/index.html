@@ -84,6 +84,18 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 </script>
+<!-- The language of the page: English unless ?lang=es or a remembered choice says Spanish. Set on <html lang>
+     before the body is drawn, so no flash of the other language; the kit's theme.css shows only the elements whose
+     data-lang matches it. Nothing else may carry data-lang: the kit hides every element that does. -->
+<script>
+(function () {
+  var l = 'en';
+  try { l = localStorage.getItem('thermomat-lang') || 'en'; } catch (e) {}
+  var q = /[?&]lang=(en|es)\b/.exec(location.search);
+  if (q) { l = q[1]; try { localStorage.setItem('thermomat-lang', l); } catch (e) {} }
+  document.documentElement.lang = l === 'es' ? 'es' : 'en';
+})();
+</script>
 
 
 <link rel="stylesheet" href="../assets/styles/theme.css">
@@ -96,12 +108,13 @@ document.addEventListener("DOMContentLoaded", function () {
 <div class="topline"></div>
 <header class="site-head">
   <div class="site-head__inner">
-    <a href="../index.html" class="wordmark">thermomat <span class="accent">PhD thesis offers</span> · 2026
-      <span class="wordmark-sub">four doctoral theses at the thermomat research group, Fisika Saila, EHU</span>
+    <a href="../index.html" class="wordmark"><span data-lang="en" lang="en">thermomat <span class="accent">PhD thesis offers</span> · 2026</span><span data-lang="es" lang="es">thermomat <span class="accent">tesis doctorales</span> · 2026</span>
+      <span class="wordmark-sub"><span data-lang="en" lang="en">four doctoral theses at the thermomat research group, Fisika Saila, EHU</span><span data-lang="es" lang="es">cuatro tesis doctorales en el grupo de investigación thermomat, Fisika Saila, EHU</span></span>
     </a>
     <nav class="site-nav">
-      <a href="../index.html">Overview</a>
-      <a href="../offers/index.html">Offers</a>
+      <a href="../index.html"><span data-lang="en" lang="en">Overview</span><span data-lang="es" lang="es">Inicio</span></a>
+      <a href="../offers/index.html"><span data-lang="en" lang="en">Offers</span><span data-lang="es" lang="es">Ofertas</span></a>
+      <span class="nav-right"><span class="lang-toggle" role="group" aria-label="Language / Idioma"><button type="button" data-set-lang="en" aria-pressed="true" title="English">EN</button><span class="sl">|</span><button type="button" data-set-lang="es" aria-pressed="false" title="Español">ES</button></span></span>
     </nav>
   </div>
 </header>
@@ -109,8 +122,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <div class="docs">
 <nav class="docs-nav" aria-label="Site sections">
 <button class="docs-fold" type="button" data-fold="nav" aria-label="Hide the navigation" title="Hide the navigation">‹</button>
-<details class="group" open=""><summary class="t">Overview</summary><ul><li><a href="../index.html">Overview</a></li></ul></details>
-<details class="group" open=""><summary class="t">Offers</summary><ul><li><a href="../offers/index.html">All four offers</a></li><li><a href="../offers/what-a-powder-pattern-can-tell/index.html">What a powder pattern can tell</a></li><li><a href="../offers/laser-textured-surfaces/index.html">Laser-textured surfaces with selective radiative properties</a></li><li><a href="../offers/high-temperature-emissometer/index.html">An emissometer for ceramics up to 2000 °C</a></li><li><a href="../offers/advanced-joining/index.html">Advanced joining of high-performance metallic materials</a></li></ul></details>
+<details class="group" open=""><summary class="t"><span data-lang="en" lang="en">Overview</span><span data-lang="es" lang="es">Inicio</span></summary><ul><li><a href="../index.html"><span data-lang="en" lang="en">Overview</span><span data-lang="es" lang="es">Inicio</span></a></li></ul></details>
+<details class="group" open=""><summary class="t"><span data-lang="en" lang="en">Offers</span><span data-lang="es" lang="es">Ofertas</span></summary><ul><li><a href="../offers/index.html"><span data-lang="en" lang="en">The four offers, 2026</span><span data-lang="es" lang="es">Las cuatro ofertas, 2026</span></a></li><li><a href="../offers/what-a-powder-pattern-can-tell/index.html"><span data-lang="en" lang="en">What a powder pattern can tell</span><span data-lang="es" lang="es">Lo que un difractograma de polvo puede decir</span></a></li><li><a href="../offers/laser-textured-surfaces/index.html"><span data-lang="en" lang="en">Laser-textured surfaces with selective radiative properties</span><span data-lang="es" lang="es">Superficies texturizadas por láser con propiedades radiativas selectivas</span></a></li><li><a href="../offers/high-temperature-emissometer/index.html"><span data-lang="en" lang="en">An emissometer for ceramics up to 2000 °C</span><span data-lang="es" lang="es">Un emisómetro para cerámicos hasta 2000 °C</span></a></li><li><a href="../offers/advanced-joining/index.html"><span data-lang="en" lang="en">Advanced joining of high-performance metallic materials</span><span data-lang="es" lang="es">Unión avanzada de materiales metálicos de altas prestaciones</span></a></li></ul></details>
 </nav>
 <div class="docs-main">
 
@@ -122,10 +135,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <!-- generated by tools/build.py from data/offers/*.yml; do not edit -->
 <div class="page-wide">
-<h1>The four offers, 2026</h1>
-<p class="lede">Four doctoral theses at thermomat, Fisika Saila, EHU. Each offer is one page: read it here or take the PDF. <a href="../assets/offers/thermomat-phd-offers-2026.pdf">All four in one PDF</a>.</p>
-<p class="funding" lang="es">Existe financiación total o parcial de los proyectos de tesis, las cuales dependerán del ajuste de los perfiles de los/as candidatos/as a las propuestas.</p>
-<div class="ocards"><a class="ocard" href="../offers/what-a-powder-pattern-can-tell/index.html"><img src="../assets/offers/what-a-powder-pattern-can-tell.jpg" alt="The one-page offer: What a powder pattern can tell" loading="lazy"><span class="ocard-t">What a powder pattern can tell</span><span class="ocard-s">Identifiability, Bayesian inference and symmetry in the determination of magnetic structures</span><span class="ocard-p">Irene Urcelay-Olabarria and Josu M. Igartua</span></a><a class="ocard" href="../offers/laser-textured-surfaces/index.html"><img src="../assets/offers/laser-textured-surfaces.jpg" alt="The one-page offer: Characterization, modelling and design of laser-textured surfaces with selective radiative properties" loading="lazy"><span class="ocard-t">Characterization, modelling and design of laser-textured surfaces with selective radiative properties</span><span class="ocard-s">From processing to spectral selectivity: surface descriptors, simulation and physics-informed machine learning</span><span class="ocard-p">Josu M. Igartua and Jon Gabirondo-López</span></a><a class="ocard" href="../offers/high-temperature-emissometer/index.html"><img src="../assets/offers/high-temperature-emissometer.jpg" alt="The one-page offer: Development of an emissometer for the study of ceramic materials at very high temperatures for energy efficiency processes" loading="lazy"><span class="ocard-t">Development of an emissometer for the study of ceramic materials at very high temperatures for energy efficiency processes</span><span class="ocard-s">Laser heating, calibration and uncertainty of spectral emissivity up to 2000 °C</span><span class="ocard-p">Mireia Sainz-Menchón and Telmo Echániz</span></a><a class="ocard" href="../offers/advanced-joining/index.html"><img src="../assets/offers/advanced-joining.jpg" alt="The one-page offer: Advanced Joining of High-Performance Metallic Materials" loading="lazy"><span class="ocard-t">Advanced Joining of High-Performance Metallic Materials</span><span class="ocard-s">Transient liquid phase bonding of nickel-based superalloys to stainless steel, from processing to properties</span><span class="ocard-p">Iñaki López-Ferreño and Gabriel A. López</span></a></div>
+<h1><span data-lang="en" lang="en">The four offers, 2026</span><span data-lang="es" lang="es">Las cuatro ofertas, 2026</span></h1>
+<p class="lede"><span data-lang="en" lang="en">Four doctoral theses at thermomat, Fisika Saila, EHU. Each offer is one page: read it here or take the PDF.</span><span data-lang="es" lang="es">Cuatro tesis doctorales en thermomat, Fisika Saila, EHU. Cada oferta ocupa una página: léela aquí o descarga el PDF.</span> <a href="../assets/offers/thermomat-phd-offers-2026.pdf"><span data-lang="en" lang="en">All four in one PDF</span><span data-lang="es" lang="es">Las cuatro en un PDF (en inglés)</span></a>.</p>
+<p class="funding"><span data-lang="en" lang="en">Full or partial funding is available for the thesis projects.</span><span data-lang="es" lang="es">Existe financiación total o parcial de los proyectos de tesis.</span></p>
+<div class="ocards"><a class="ocard" href="../offers/what-a-powder-pattern-can-tell/index.html"><img src="../assets/offers/what-a-powder-pattern-can-tell.jpg" alt="The one-page offer: What a powder pattern can tell" loading="lazy"><span class="ocard-t" data-lang="en" lang="en">What a powder pattern can tell</span><span class="ocard-t" data-lang="es" lang="es">Lo que un difractograma de polvo puede decir</span><span class="ocard-s" data-lang="en" lang="en">Identifiability, Bayesian inference and symmetry in the determination of magnetic structures</span><span class="ocard-s" data-lang="es" lang="es">Identificabilidad, inferencia bayesiana y simetría en la determinación de estructuras magnéticas</span><span class="ocard-p"><span data-lang="en" lang="en">Irene Urcelay-Olabarria and Josu M. Igartua</span><span data-lang="es" lang="es">Irene Urcelay-Olabarria y Josu M. Igartua</span></span></a><a class="ocard" href="../offers/laser-textured-surfaces/index.html"><img src="../assets/offers/laser-textured-surfaces.jpg" alt="The one-page offer: Characterization, modelling and design of laser-textured surfaces with selective radiative properties" loading="lazy"><span class="ocard-t" data-lang="en" lang="en">Characterization, modelling and design of laser-textured surfaces with selective radiative properties</span><span class="ocard-t" data-lang="es" lang="es">Caracterización, modelización y diseño de superficies texturizadas por láser con propiedades radiativas selectivas</span><span class="ocard-s" data-lang="en" lang="en">From processing to spectral selectivity: surface descriptors, simulation and physics-informed machine learning</span><span class="ocard-s" data-lang="es" lang="es">Del procesado a la selectividad espectral: descriptores de superficie, simulación y aprendizaje automático informado por la física</span><span class="ocard-p"><span data-lang="en" lang="en">Josu M. Igartua and Jon Gabirondo-López</span><span data-lang="es" lang="es">Josu M. Igartua y Jon Gabirondo-López</span></span></a><a class="ocard" href="../offers/high-temperature-emissometer/index.html"><img src="../assets/offers/high-temperature-emissometer.jpg" alt="The one-page offer: Development of an emissometer for the study of ceramic materials at very high temperatures for energy efficiency processes" loading="lazy"><span class="ocard-t" data-lang="en" lang="en">Development of an emissometer for the study of ceramic materials at very high temperatures for energy efficiency processes</span><span class="ocard-t" data-lang="es" lang="es">Desarrollo de un emisómetro para el estudio de materiales cerámicos a muy altas temperaturas para procesos de eficiencia energética</span><span class="ocard-s" data-lang="en" lang="en">Laser heating, calibration and uncertainty of spectral emissivity up to 2000 °C</span><span class="ocard-s" data-lang="es" lang="es">Calentamiento láser, calibración e incertidumbre de la emisividad espectral hasta 2000 °C</span><span class="ocard-p"><span data-lang="en" lang="en">Mireia Sainz-Menchón and Telmo Echániz</span><span data-lang="es" lang="es">Mireia Sainz-Menchón y Telmo Echániz</span></span></a><a class="ocard" href="../offers/advanced-joining/index.html"><img src="../assets/offers/advanced-joining.jpg" alt="The one-page offer: Advanced Joining of High-Performance Metallic Materials" loading="lazy"><span class="ocard-t" data-lang="en" lang="en">Advanced Joining of High-Performance Metallic Materials</span><span class="ocard-t" data-lang="es" lang="es">Unión avanzada de materiales metálicos de altas prestaciones</span><span class="ocard-s" data-lang="en" lang="en">Transient liquid phase bonding of nickel-based superalloys to stainless steel, from processing to properties</span><span class="ocard-s" data-lang="es" lang="es">Unión por fase líquida transitoria de superaleaciones de níquel con acero inoxidable, del procesado a las propiedades</span><span class="ocard-p"><span data-lang="en" lang="en">Iñaki López-Ferreño and Gabriel A. López</span><span data-lang="es" lang="es">Iñaki López-Ferreño y Gabriel A. López</span></span></a></div>
 </div>
 
 
@@ -260,21 +273,64 @@ document.addEventListener("DOMContentLoaded", function () {
   <div class="site-foot__inner">
     <div class="foot-grid">
       <div class="foot-about">
-        <h4 class="anchored">What this is</h4>
-        <p>The PhD thesis offers of the thermomat research group at the EHU. Each offer is one page, to read here or to download; write to the contact about any of them.</p>
+        <h4 class="anchored"><span data-lang="en" lang="en">What this is</span><span data-lang="es" lang="es">Qué es esto</span></h4>
+        <p><span data-lang="en" lang="en">The PhD thesis offers of the thermomat research group at the EHU. Each offer is one page, to read here or to download; write to the contact about any of them.</span><span data-lang="es" lang="es">Las ofertas de tesis doctoral del grupo de investigación thermomat de la EHU. Cada oferta ocupa una página, para leerla aquí o descargarla; escribe al contacto sobre cualquiera de ellas.</span></p>
         <div class="cite-block">Prof. Gabriel A. López · Fisika Saila, EHU<br>gabrielalejandro.lopez@ehu.eus</div>
       </div>
-      <div><h4 class="anchored">This site</h4><ul><li><a href="../index.html">Overview</a></li><li><a href="../offers/index.html">Offers</a></li></ul></div>
-      <div><h4 class="anchored">The group</h4><ul>
+      <div><h4 class="anchored"><span data-lang="en" lang="en">This site</span><span data-lang="es" lang="es">Este sitio</span></h4><ul><li><a href="../index.html"><span data-lang="en" lang="en">Overview</span><span data-lang="es" lang="es">Inicio</span></a></li><li><a href="../offers/index.html"><span data-lang="en" lang="en">Offers</span><span data-lang="es" lang="es">Ofertas</span></a></li></ul></div>
+      <div><h4 class="anchored"><span data-lang="en" lang="en">The group</span><span data-lang="es" lang="es">El grupo</span></h4><ul>
         <li><a href="https://www.thermomat.eus">thermomat.eus</a></li>
         <li><a href="https://www.ehu.eus">EHU</a></li></ul></div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 thermomat research group</span>
+      <span>© 2026 <span data-lang="en" lang="en">thermomat research group</span><span data-lang="es" lang="es">grupo de investigación thermomat</span></span>
       <span>Quarto · family design kit</span>
     </div>
   </div>
 </footer>
+<!-- The language toggle: the EN | ES buttons in the header switch the page and remember the choice in this
+     browser. The kit's docs-close.html builds the breadcrumbs and "On this page" from text, which would join both
+     languages; they are rebuilt here from the marked-up headings and navigation, so each shows one language. -->
+<script>
+(function () {
+  var root = document.documentElement;
+  function set(l) {
+    root.lang = l;
+    try { localStorage.setItem('thermomat-lang', l); } catch (e) {}
+    document.querySelectorAll('[data-set-lang]').forEach(function (b) {
+      b.setAttribute('aria-pressed', b.getAttribute('data-set-lang') === l ? 'true' : 'false');
+    });
+  }
+  document.querySelectorAll('[data-set-lang]').forEach(function (b) {
+    b.addEventListener('click', function () { set(b.getAttribute('data-set-lang')); });
+  });
+  set(root.lang === 'es' ? 'es' : 'en');
+
+  /* "On this page": copy each heading's markup, both languages, instead of its joined text. */
+  document.querySelectorAll('.docs-toc ol a[href^="#"]').forEach(function (a) {
+    var h = document.getElementById(decodeURIComponent(a.getAttribute('href').slice(1)));
+    if (h && h.querySelector('[data-lang]')) {
+      var c = h.cloneNode(true);
+      c.querySelectorAll('.anchorjs-link').forEach(function (n) { n.remove(); });
+      a.innerHTML = c.innerHTML.trim();
+    }
+  });
+  var t = document.querySelector('.docs-toc .t');
+  if (t) t.innerHTML = '<span data-lang="en" lang="en">On this page</span><span data-lang="es" lang="es">En esta página</span>';
+
+  /* Breadcrumbs: group › page, from the navigation's markup. */
+  var crumbs = document.querySelector('.docs-crumbs'), cur = document.querySelector('.docs-nav a.current');
+  if (crumbs && cur && cur.querySelector('[data-lang]')) {
+    var det = cur.closest('details.group'), g = det && det.querySelector('summary.t');
+    var parts = [];
+    if (g && g.textContent.trim() !== cur.textContent.trim()) parts.push(g.innerHTML);
+    parts.push(cur.innerHTML);
+    crumbs.innerHTML = parts.map(function (p, i) {
+      return (i ? '<span class="sep">›</span>' : '') + '<span>' + p + '</span>';
+    }).join('');
+  }
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

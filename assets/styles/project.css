@@ -86,3 +86,13 @@
   .docs.nav-folded, .docs.toc-folded, .docs.nav-folded.toc-folded, .docs.docs-wide.nav-folded { grid-template-columns: 1fr; }
   .docs.nav-folded .docs-nav > :not(.docs-fold) { display: block; }
 }
+
+/* Two languages (L010): English by default, Spanish on the header's toggle. The kit's own mechanism does the work
+   (theme.css: an element with data-lang shows only when it matches <html lang>); unmarked text shows in both. */
+.lang-toggle { display: inline-flex; align-items: center; gap: 2px; margin-left: 18px; font-family: var(--sans); font-size: 13px; }
+.lang-toggle button { border: 1px solid transparent; background: none; color: var(--ink-faint); font: inherit; font-weight: 600; letter-spacing: 0.06em; padding: 2px 7px; border-radius: 2px; cursor: pointer; }
+.lang-toggle button[aria-pressed="true"] { color: var(--teal); border-color: var(--teal); }
+.lang-toggle button:hover { color: var(--teal); }
+.lang-toggle button:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+.lang-toggle .sl { color: var(--line); }
+.translation-note { font-family: var(--sans); font-size: 13.5px; color: var(--ink-faint); font-style: italic; margin: -10px 0 18px; }
